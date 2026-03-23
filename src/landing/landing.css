@@ -8,10 +8,11 @@
 }
 
 .lp-container {
-  width: 720px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 720px;
   margin: 0 auto;
   padding: 0 24px;
+  box-sizing: border-box;
 }
 
 .lp-main {
@@ -58,12 +59,37 @@
   font-size: 17px;
   font-weight: 600;
   color: rgba(247, 243, 255, 0.95);
+  white-space: nowrap;
 }
 
 .lp-headerLinks {
   display: flex;
   align-items: center;
   gap: 8px;
+}
+
+.lp-headerLinks .lp-iconLink {
+  padding: 6px;
+  min-width: 36px;
+  min-height: 36px;
+  justify-content: center;
+  border: none;
+  background: transparent;
+}
+
+.lp-headerLinks .lp-iconLink:hover {
+  border: none;
+  background: rgba(180, 144, 255, 0.1);
+}
+
+.lp-headerLinks .lp-iconLink span {
+  display: none;
+}
+
+.lp-headerLinks .lp-iconLink-svg {
+  width: 22px;
+  height: 22px;
+  margin: 0;
 }
 
 /* Icon links */
@@ -108,6 +134,7 @@
 .lp-heroCopy {
   max-width: 540px;
   margin: 0 auto;
+  min-width: 0;
 }
 
 .lp-kicker {
@@ -117,6 +144,8 @@
   text-transform: uppercase;
   color: rgba(180, 144, 255, 0.9);
   margin-bottom: 16px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .lp-h1 {
@@ -126,6 +155,8 @@
   margin: 0 0 20px;
   color: var(--text-h);
   font-weight: 600;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .lp-lead {
@@ -133,6 +164,8 @@
   line-height: 1.6;
   color: rgba(247, 243, 255, 0.75);
   margin: 0 0 32px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .lp-leadStack {
@@ -160,8 +193,11 @@
 
 .lp-aboutInner {
   max-width: 520px;
+  width: 100%;
   margin: 0 auto;
   text-align: center;
+  min-width: 0;
+  overflow: hidden;
 }
 
 .lp-aboutTitle {
@@ -171,30 +207,40 @@
   text-transform: uppercase;
   color: rgba(247, 243, 255, 0.6);
   margin: 0 0 24px;
+  text-align: center;
 }
 
 .lp-aboutList {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 14px;
-  text-align: left;
+  text-align: center;
+  max-width: 100%;
+  width: 100%;
+  min-width: 0;
 }
 
 .lp-aboutList li {
   position: relative;
-  padding-left: 20px;
+  padding: 0 0 0 24px;
   font-size: 15px;
   line-height: 1.55;
   color: rgba(247, 243, 255, 0.78);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: break-word;
+  text-align: left;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .lp-aboutList li::before {
   content: '';
   position: absolute;
-  left: 0;
+  left: 8px;
   top: 0.5em;
   width: 6px;
   height: 6px;
@@ -249,30 +295,178 @@
 
 @media (max-width: 640px) {
   .lp-container {
-    padding: 0 20px;
+    padding: 0 24px;
+  }
+
+  .lp-heroInner,
+  .lp-aboutInner {
+    min-width: 0;
+  }
+
+  .lp-headerInner {
+    padding: 12px 0;
+    gap: 12px;
+    flex-wrap: nowrap;
+    min-width: 0;
+  }
+
+  .lp-logoLink {
+    min-width: 0;
+    flex-shrink: 0;
+  }
+
+  .lp-logoIcon {
+    height: 24px;
+    width: 24px;
+  }
+
+  .lp-logoText {
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+  }
+
+  .lp-headerLinks {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  .lp-headerLinks .lp-iconLink {
+    padding: 6px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  .lp-headerLinks .lp-iconLink-svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .lp-section {
+    padding: 48px 0;
+  }
+
+  .lp-hero {
+    padding-top: 48px;
+    padding-bottom: 56px;
+  }
+
+  .lp-kicker {
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    white-space: normal;
+    word-break: break-word;
   }
 
   .lp-h1 {
-    font-size: 32px;
+    font-size: 22px;
+    line-height: 1.25;
+    margin: 0 0 14px;
   }
 
   .lp-lead {
-    font-size: 16px;
+    font-size: 14px;
+    line-height: 1.55;
+    margin: 0 0 24px;
+  }
+
+  .lp-leadStack {
+    white-space: normal;
   }
 
   .lp-heroLinks {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
   }
 
   .lp-heroLinks .lp-iconLink {
-    width: 100%;
-    max-width: 200px;
-    justify-content: center;
+    min-width: auto;
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+
+  .lp-heroLinks .lp-iconLink-svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .lp-about {
+    padding-top: 32px;
+    padding-bottom: 48px;
+  }
+
+  .lp-aboutTitle {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+
+  .lp-aboutList {
+    min-width: 0;
+  }
+
+  .lp-aboutList li {
+    font-size: 14px;
+    padding-left: 20px;
+  }
+
+  .lp-aboutList li::before {
+    left: 4px;
+  }
+
+  .lp-footer {
+    padding: 16px 0 32px;
   }
 
   .lp-footerInner {
     flex-direction: column;
     align-items: center;
+    gap: 12px;
+  }
+
+  .lp-footerText {
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .lp-footerLinks .lp-iconLink {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 380px) {
+  .lp-container {
+    padding: 0 16px;
+  }
+
+  .lp-logoText {
+    font-size: 14px;
+  }
+
+  .lp-h1 {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .lp-kicker {
+    font-size: 10px;
+  }
+
+  .lp-lead {
+    font-size: 13px;
+  }
+
+  .lp-heroLinks .lp-iconLink {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+
+  .lp-heroLinks .lp-iconLink-svg {
+    width: 16px;
+    height: 16px;
   }
 }
 

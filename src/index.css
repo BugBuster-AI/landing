@@ -51,14 +51,17 @@
 
 #root {
   width: 100%;
+  min-width: 0;
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
 }
 
+html,
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 h1,
@@ -85,6 +88,13 @@ h2 {
   @media (max-width: 1024px) {
     font-size: 20px;
   }
+}
+
+/* Override for landing page sections - loaded after landing.css */
+.lp-aboutTitle {
+  text-align: center !important;
+  display: block;
+  width: 100%;
 }
 p {
   margin: 0;
