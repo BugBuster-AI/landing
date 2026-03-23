@@ -6,7 +6,7 @@ import { IconLink } from './components/IconLink';
 
 const HeaderLogo = () => (
   <>
-    <img className="lp-logoIcon" src="/favicon.png" alt="" loading="eager" />
+    <img className="lp-logoIcon" src={`${import.meta.env.BASE_URL}favicon.png`} alt="" loading="eager" />
     <span className="lp-logoText">BugBuster AI</span>
   </>
 );

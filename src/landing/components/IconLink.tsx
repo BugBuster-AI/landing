@@ -14,7 +14,7 @@ export function IconLink({ href, label, iconId }: IconLinkProps) {
       aria-label={label}
     >
       <svg className="lp-iconLink-svg" aria-hidden focusable="false">
-        <use href={`/icons.svg#${iconId}`} />
+        <use href={`${import.meta.env.BASE_URL}icons.svg#${iconId}`} />
       </svg>
       <span>{label}</span>
     </a>
