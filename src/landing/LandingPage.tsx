@@ -2,14 +2,13 @@ import { githubRepoUrl, landingContent, telegramUrl } from './content';
 import './landing.css';
 
 import { renderOrderedSections } from './sectionRegistry';
+import { IconLink } from './components/IconLink';
 
-const GradientLogo = () => (
-  <img
-    className="lp-logo"
-    src="/assets/bugbuster/header-logo.svg"
-    alt={landingContent.headerLogoAlt}
-    loading="eager"
-  />
+const HeaderLogo = () => (
+  <>
+    <img className="lp-logoIcon" src="/favicon.png" alt="" loading="eager" />
+    <span className="lp-logoText">BugBuster AI</span>
+  </>
 );
 
 export default function LandingPage() {
@@ -18,11 +17,12 @@ export default function LandingPage() {
       <header className="lp-header">
         <div className="lp-container lp-headerInner">
           <a href={githubRepoUrl} className="lp-logoLink" target="_blank" rel="noreferrer">
-            <GradientLogo />
+            <HeaderLogo />
           </a>
-          <a className="lp-headerTelegram" href={telegramUrl} target="_blank" rel="noreferrer">
-            Telegram
-          </a>
+          <nav className="lp-headerLinks">
+            <IconLink href={githubRepoUrl} label="GitHub" iconId="github-icon" />
+            <IconLink href={telegramUrl} label="Telegram" iconId="telegram-icon" />
+          </nav>
         </div>
       </header>
 
@@ -33,19 +33,14 @@ export default function LandingPage() {
       <footer className="lp-footer">
         <div className="lp-container lp-footerInner">
           <div className="lp-footerText">
-            © {new Date().getFullYear()} {landingContent.productName}. Open-source UI test automation.
+            © {new Date().getFullYear()} {landingContent.productName}. Open-source.
           </div>
           <div className="lp-footerLinks">
-            <a href={githubRepoUrl} target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-            <a href={telegramUrl} target="_blank" rel="noreferrer">
-              Telegram
-            </a>
+            <IconLink href={githubRepoUrl} label="GitHub" iconId="github-icon" />
+            <IconLink href={telegramUrl} label="Telegram" iconId="telegram-icon" />
           </div>
         </div>
       </footer>
     </div>
   );
 }
-
