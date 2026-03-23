@@ -298,6 +298,11 @@
     padding: 0 24px;
   }
 
+  .lp-header .lp-container {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
   .lp-heroInner,
   .lp-aboutInner {
     min-width: 0;
