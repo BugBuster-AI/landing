@@ -1,4 +1,5 @@
 export const githubRepoUrl = 'https://github.com/BugBuster-AI/bugbuster';
+export const githubDiscussionsUrl = 'https://github.com/orgs/BugBuster-AI/discussions';
 export const telegramUrl = 'https://t.me/bugbuster_news';
 
 export type LandingLink = { label: string; href: string };
@@ -9,9 +10,9 @@ export const landingContent = {
   headerLogoAlt: 'BugBuster logo',
 
   hero: {
-    kicker: 'Vision-language UI automation',
-    headline: 'UI tests in natural language',
-    subheadline: 'BugBuster sees the interface like a user. Describe steps in plain language — no code, selectors, or DOM access.',
+    kicker: 'Автоматизация UI на vision-language',
+    headline: 'Автоматизация UI тестирования на естественном языке',
+    subheadline: 'BugBuster видит интерфейс как пользователь. Описывайте шаги простым языком — без кода, селекторов и доступа к DOM.',
     subheadlineStack: 'VLM + Grounding + Playwright.',
     links: {
       github: { label: 'GitHub', href: githubRepoUrl },
@@ -20,12 +21,14 @@ export const landingContent = {
   },
 
   about: {
-    title: 'What it is',
+    title: 'Что это',
     points: [
-      'Test cases in natural language — no Gherkin, Cucumber, or abstractions',
-      'No selectors or DOM access — the platform sees the interface like a user',
-      'Stable interaction with dynamic UI thanks to visual grounding',
+      'Тест-кейсы на естественном языке — без Gherkin, Cucumber и абстракций',
+      'Не нужны селекторы и доступ к DOM — платформа видит интерфейс как пользователь',
+      'Стабильная работа с динамическим UI благодаря визуальному grounding',
     ],
+    discussionsNote: 'Вопросы и обсуждение — в GitHub Discussions.',
+    discussionsUrl: githubDiscussionsUrl,
   },
 
 };

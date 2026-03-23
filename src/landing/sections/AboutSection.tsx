@@ -12,6 +12,11 @@ export function AboutSection({ about }: { about: About }) {
             <li key={point}>{point}</li>
           ))}
         </ul>
+        <p className="lp-aboutDiscussions">
+          <a href={about.discussionsUrl} target="_blank" rel="noreferrer">
+            {about.discussionsNote}
+          </a>
+        </p>
       </div>
     </section>
   );
