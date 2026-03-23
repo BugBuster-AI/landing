@@ -33,7 +33,7 @@ export default function LandingPage() {
       <footer className="lp-footer">
         <div className="lp-container lp-footerInner">
           <div className="lp-footerText">
-            © {new Date().getFullYear()} {landingContent.productName}. Открытый исходный код.
+            © 2024 {landingContent.productName}. Открытый исходный код.
           </div>
           <div className="lp-footerLinks">
             <IconLink href={githubRepoUrl} label="GitHub" iconId="github-icon" />
