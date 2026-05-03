@@ -27,6 +27,11 @@ export function HeroSection({ hero }: { hero: Hero }) {
               label={hero.links.telegram.label}
               iconId="telegram-icon"
             />
+            <IconLink
+              href={hero.links.docs.href}
+              label={hero.links.docs.label}
+              iconId="docs-icon"
+            />
           </div>
         </div>
       </div>

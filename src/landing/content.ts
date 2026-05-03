@@ -1,6 +1,7 @@
 export const githubRepoUrl = 'https://github.com/BugBuster-AI/bugbuster';
 export const githubDiscussionsUrl = 'https://github.com/orgs/BugBuster-AI/discussions';
 export const telegramUrl = 'https://t.me/bugbuster_news';
+export const docsUrl = 'https://docs.bug-buster.ru';
 
 export type LandingLink = { label: string; href: string };
 
@@ -17,6 +18,7 @@ export const landingContent = {
     links: {
       github: { label: 'GitHub', href: githubRepoUrl },
       telegram: { label: 'Telegram', href: telegramUrl },
+      docs: { label: 'docs', href: docsUrl },
     },
   },
 

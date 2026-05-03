@@ -1,4 +1,4 @@
-import { githubRepoUrl, landingContent, telegramUrl } from './content';
+import { docsUrl, githubRepoUrl, landingContent, telegramUrl } from './content';
 import './landing.css';
 
 import { renderOrderedSections } from './sectionRegistry';
@@ -22,6 +22,7 @@ export default function LandingPage() {
           <nav className="lp-headerLinks">
             <IconLink href={githubRepoUrl} label="GitHub" iconId="github-icon" />
             <IconLink href={telegramUrl} label="Telegram" iconId="telegram-icon" />
+            <IconLink href={docsUrl} label="docs" iconId="docs-icon" />
           </nav>
         </div>
       </header>
@@ -38,6 +39,7 @@ export default function LandingPage() {
           <div className="lp-footerLinks">
             <IconLink href={githubRepoUrl} label="GitHub" iconId="github-icon" />
             <IconLink href={telegramUrl} label="Telegram" iconId="telegram-icon" />
+            <IconLink href={docsUrl} label="docs" iconId="docs-icon" />
           </div>
         </div>
       </footer>
